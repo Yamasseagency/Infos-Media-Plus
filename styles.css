@@ -1,0 +1,506 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Poppins;
+    background-color: white;
+    color: #eee;
+    margin: 0;
+    font-size: 12px;
+}
+
+/* Header */
+header {
+    width: 100%;
+    max-width: 1140px;
+    margin: auto;
+    height: auto; /* Hauteur auto pour s'adapter au carrousel */
+    display: flex;
+    flex-direction: column; /* Permet d'empiler le menu et le carrousel */
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    background-color: white;
+    position: relative;
+}
+
+header .logo img {
+    height: 50px;
+}
+.carousel {
+    width: 100%;
+    max-width: 1000px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 10px; /* Espacement avec le menu */
+}
+
+.carousel .list {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel .item {
+    min-width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.carousel img {
+    width: 100%;
+    max-height: 400px; /* Ajuste selon ton besoin */
+    object-fit: cover;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between; /* Aligne logo à gauche et menu à droite */
+    align-items: center;
+    width: 100%;
+    background-color: #ffffff !important;
+    padding: 10px 20px;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: black !important;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #046e2d;
+
+}
+.carousel .list .item .content{
+    position: absolute;
+    top: 20%;
+    width: 1140px;
+    max-width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-right: 30%;
+    box-sizing: border-box;
+    color: #fff;
+    text-shadow: 0 5px 10px #0004;
+}
+.carousel .list .item .content .author{
+    font-weight: bold;
+    letter-spacing: 10px;
+}
+.carousel .list .item .content .title,
+.carousel .list .item .content .topic{
+    font-weight: bold;
+    font-size: 2em;
+    list-style: 1.3em;
+}
+.carousel .list .item .content .topic{
+    color: #046e2d;
+}
+.carousel .list .item .content .buttons{ 
+    display: grid;
+    grid-template-columns: repeat(2, 130px);
+    grid-template-rows: 40px;
+    gap: 5px;
+    margin-top: 20px;
+}
+.carousel .list .item .content button{
+    border: none;
+    background-color: #eee;
+    letter-spacing: 3px;
+    font-family: Poppins;
+    font-weight: 500;
+}
+.carousel .list .item .content button:nth-child(2){
+    background-color: transparent;
+    color: #eee;
+    border: 1px solid #eee;
+}
+/* Section Derniers Articles */
+.latest-news {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.latest-news h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.news-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.news-card {
+    width: 300px;
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.news-content {
+    padding: 15px;
+    text-align: left;
+}
+
+.news-content h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.news-content p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.read-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background:  #046e2d;
+    color: white;
+    text-decoration: none;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.read-btn:hover {
+    background: darkgreen;
+}
+
+/* Footer */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+header a{
+    margin-right: 40px;
+    text-decoration: none;
+    color: #eee;
+}
+/*thumbnail*/
+.thumbnail {
+    position: absolute;
+    bottom: 50px;
+    right: 50px; /* Déplace le thumbnail à droite */
+    left: auto; /* Supprime la propriété left */
+    max-width: 100%;
+    z-index: 100;
+    display: flex;
+    gap: 20px;
+}
+
+.thumbnail .item{
+    width: 75px;
+    height: 110px;
+    flex-shrink: 0;
+    position: relative;
+}
+.thumbnail .item img{
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+.thumbnail .item .content{
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+}
+.thumbnail .item .content .title{
+    font-weight: bold;
+}
+/*arrows*/
+.arrows{
+    position: absolute;
+    top: 80%;
+    right: 52%;
+    width: 300px;
+    max-width: 30%;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+.arrows button{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #eee4;
+    border: none;
+    font-family: monospace;
+    color: #fff;
+    font-weight: bold;
+    font-size: large;
+    transition: .5s;
+    z-index: 100;
+}
+.arrows button:hover{
+    background-color: #eee;
+    color: #555;
+}
+.carousel .list .item:nth-child(1){
+    z-index: 1;
+}
+.carousel .list .item:nth-child(1) .author,
+.carousel .list .item:nth-child(1) .title,
+.carousel .list .item:nth-child(1) .topic,
+.carousel .list .item:nth-child(1) .des,
+.carousel .list .item:nth-child(1) .buttons{
+    transform: translateY(50px);
+    filter: blur(20px);
+    opacity: 0;
+    animation: showContent 0.5s 1s linear 1 forwards;
+}
+@keyframes showContent{
+    to{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateY(0);
+    }
+}
+.carousel .list .item:nth-child(1) .title{
+    animation-delay: 1.2s;
+}
+.carousel .list .item:nth-child(1) .topic{
+    animation-delay: 1.4s;
+}
+.carousel .list .item:nth-child(1) .des{
+    animation-delay: 1.6s;
+}
+.carousel .list .item:nth-child(1) .buttons{
+    animation-delay: 1.8s;
+}
+.carousel.next .list .item:nth-child(1) img{
+    width: 150px;
+    height: 220px;
+    position: absolute;
+    left: 50%;
+    bottom: 50px;
+    border-radius: 20px;
+    animation: showImage 0.5s linear 1 forwards;
+}
+@keyframes showImage{
+    to{
+        width: 100%;
+        height: 100%;
+        left: 0;
+        bottom: 0;
+        border-radius: 0;
+    }
+}
+.carousel.next .thumbnail .item:nth-last-child(1){
+    width: 0;
+    overflow: hidden;
+    animation: showThumbnail .5s linear 1 forwards;
+}
+@keyframes showThumbnail{
+    to{
+        width: 150px;
+    }
+}
+.carousel.next .thumbnail{
+    transform: translateX(150px);
+    animation: transformThumbnail .5s linear 1 forwards;
+}
+@keyframes transformThumbnail{
+    to{
+        transform: translateX(0);
+    }
+}
+/*action prev click*/
+.carousel.prev .list .item:nth-child(2){
+    z-index: 2;
+}
+.carousel.prev .list .item:nth-child(2) img{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    animation: outImage 0.5s linear 1 forwards;
+}
+@keyframes outImage{
+    to{
+        width: 150px;
+        height: 220px;
+        border-radius: 20px;
+        left: 50%;
+        bottom: 50px;
+    }
+}
+.carousel.prev .thumbnail .item:nth-child(1){
+    width: 0;
+    overflow: hidden;
+    opacity: 0;
+    animation: showThumbnail 0.5s linear 1 forwards;
+}
+.carousel.prev .list .item:nth-child(2) .author,
+.carousel.prev .list .item:nth-child(2) .title,
+.carousel.prev .list .item:nth-child(2) .topic,
+.carousel.prev .list .item:nth-child(2) .des,
+.carousel.prev .list .item:nth-child(2) .buttons{
+    animation: contentOut 1.5s linear 1 forwards;
+}
+@keyframes contentOut{
+    to{
+        transform: translateY(-150px);
+        filter: blur(20px);
+        opacity: 0;
+    }
+}
+.carousel.next .arrows button,
+.carousel.prev .arrows button{
+    pointer-events: none;
+}
+/*timt*/
+.time{
+    width: 0%;
+    height: 5px;
+    background-color: #046e2d;
+    position: absolute;
+    z-index: 100;
+    top: 0;
+    left: 0;
+}
+.carousel.next .time,
+.carousel.prev .time{
+    width: 100%;
+    animation: timeRunning 2s linear 1 forwards;
+}
+@keyframes timeRunning{
+    to{
+        width: 0;
+    }
+}
+@media screen and (max-width: 678px) {
+    .thumbnail, .arrows {
+        display: none;
+    }
+    body {
+        font-size: 20px;
+    }
+    header, .carousel, .latest-news, .news-grid{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        background-color: #222;
+        padding: 10px 20px;
+        overflow-x: auto; /* Permet le défilement horizontal */
+        white-space: nowrap; /* Empêche le retour à la ligne */
+    }
+    
+    nav ul {
+        list-style: none;
+        display: flex;
+        gap: 20px;
+        flex-wrap: nowrap; /* Empêche les éléments de passer à la ligne */
+    }
+    
+    nav::-webkit-scrollbar {
+        height: 5px; /* Ajuste la hauteur de la barre de défilement */
+    }
+    
+    nav::-webkit-scrollbar-thumb {
+        background: #046e2d; /* Couleur de la barre de défilement */
+        border-radius: 10px;
+    }
+
+    .carousel img {
+        max-height: 250px; /* Taille réduite pour mobile */
+    }
+
+    .carousel .list .item .content {
+        width: 90%;
+        padding-right: 10%;
+        font-size: 6px;
+    }
+
+    .carousel .list .item .content .title {
+        font-size: 1em;
+    }
+
+    .news-grid {
+        flex-direction: column;
+    }
+
+    .news-card {
+        width: 100%;
+    }
+
+    /*.thumbnail {
+        bottom: 2rem; /* Remplacez 20px par une unité relative 
+        left: 2rem;
+        gap: 1rem;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .thumbnail .item {
+        width: 100%; /* Ajustez selon le besoin 
+        height: auto;
+    }*/
+    
+
+    /*.arrows {
+        top: 85%;
+        right: 10%;
+        width: 200px;
+    }
+
+    .arrows button {
+        width: 35px;
+        height: 35px;
+        font-size: medium;
+    }*/
+
+    footer {
+        position: relative;
+        padding: 15px;
+    }
+
+}
